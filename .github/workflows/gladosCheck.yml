@@ -8,7 +8,7 @@ on:
       - 'README.md'
       - 'imgs/'
   schedule:
-    - cron: '0 4,10 * * *'
+    - cron: '10 23 * * *'
   watch:
     types: started
 
@@ -45,9 +45,6 @@ jobs:
         GLADOS_EXCHANGE_PLAN: ${{ secrets.GLADOS_EXCHANGE_PLAN }}
         GLADOS_VERBOSE: ${{ secrets.GLADOS_VERBOSE }}
 
-    - name: keep alive
-      uses: liskin/gh-workflow-keepalive@v1 # using the workflow with default settings
-      
     - name: delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
       with:
